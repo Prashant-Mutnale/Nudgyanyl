@@ -80,7 +80,7 @@ class Recent extends React.Component {
       refreshing: false,
       appState: AppState.currentState
     };
-    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
+
     this.onRefresh = this.onRefresh.bind(this);
     this.handleAppStatehange = this.handleAppStatehange.bind(this)
     this.checkEmployee = this.checkEmployee.bind(this)
@@ -91,6 +91,9 @@ class Recent extends React.Component {
   componentDidMount(){
     AppState.addEventListener('change', this.handleAppStatehange);
    
+  }
+  codepush(){
+    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
   }
 
   componentWillUnmount() {
@@ -129,6 +132,7 @@ class Recent extends React.Component {
     gettoken = parsedata.accessToken;
     this.props.recent(gettoken);
     this.props.getProjectid(gettoken)
+    this.codepush()
   }
   renderItem(data) {
     return (
