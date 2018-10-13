@@ -36,7 +36,7 @@ import { FloatingAction } from 'react-native-floating-action';
 import Analytics from 'appcenter-analytics'
 import Crashes from 'appcenter-crashes'
 import TimeAgo from "react-native-timeago";
-import CodePush from 'react-native-code-push'
+
 let getdata = 0;
 let itemslength;
 let token;
@@ -120,7 +120,7 @@ class Recent extends React.Component {
     );
   };
   async componentDidMount() {
-    codePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
+ 
     const signindetails = await AsyncStorage.getItem("signindata");
     let parsedata = JSON.parse(signindetails);
     gettoken = parsedata.accessToken;
@@ -139,11 +139,11 @@ class Recent extends React.Component {
       loading: false
     });
   }
-  sendEvent(){
-    Analytics.trackEvent('My custom Event',{
-      prop1: new Date().getSeconds()
-    });
-  }
+  // sendEvent(){
+  //   Analytics.trackEvent('My custom Event',{
+  //     prop1: new Date().getSeconds()
+  //   });
+  // }
   crashEvent(){
     Crashes.generateTestCrash();
   }
@@ -236,8 +236,8 @@ class Recent extends React.Component {
           </TouchableOpacity>
         </View> */}
         <View style={{position: 'relative', flex: 1,marginTop: 10}}>
-        <Button tittle="Send event" onPress={()=>this.sendEvent()}></Button>
-        <Button tittle="Crash event" onPress={()=>this.crashEvent()}></Button>
+        {/* <Button tittle="Send event" onPress={()=>this.sendEvent()}></Button>
+        <Button tittle="Crash event" onPress={()=>this.crashEvent()}></Button> */}
         <FlatList
           data={datafilter}
           showsVerticalScrollIndicator={false}
