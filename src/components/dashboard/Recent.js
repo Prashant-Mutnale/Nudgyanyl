@@ -121,12 +121,13 @@ class Recent extends React.Component {
     );
   };
   async componentDidMount() {
-    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
+ 
     const signindetails = await AsyncStorage.getItem("signindata");
     let parsedata = JSON.parse(signindetails);
     gettoken = parsedata.accessToken;
     this.props.recent(gettoken);
     this.props.getProjectid(gettoken)
+    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
   }
   renderItem(data) {
     return (
@@ -344,7 +345,7 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
-                        <View><Text>Hello Visakh</Text></View>
+                        {/* <View><Text>Hello Visakh</Text></View> */}
                       </View>
                       
                     ) : null}
