@@ -70,6 +70,7 @@ const actions = [{
 }];
 class Recent extends React.Component {
   constructor(props) {
+    
     super(props);
     this.state = {
       starCount: 4,
@@ -79,6 +80,7 @@ class Recent extends React.Component {
       refreshing: false,
       appState: AppState.currentState
     };
+    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
     this.onRefresh = this.onRefresh.bind(this);
     this.handleAppStatehange = this.handleAppStatehange.bind(this)
     this.checkEmployee = this.checkEmployee.bind(this)
@@ -127,7 +129,6 @@ class Recent extends React.Component {
     gettoken = parsedata.accessToken;
     this.props.recent(gettoken);
     this.props.getProjectid(gettoken)
-    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
   }
   renderItem(data) {
     return (
@@ -345,7 +346,7 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
-                        <View><Text>Hello Visakh</Text></View>
+                        {/* <View><Text>Hello Visakh</Text></View> */}
                       </View>
                       
                     ) : null}
