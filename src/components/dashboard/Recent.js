@@ -36,6 +36,7 @@ import { FloatingAction } from 'react-native-floating-action';
 import Analytics from 'appcenter-analytics'
 import Crashes from 'appcenter-crashes'
 import TimeAgo from "react-native-timeago";
+import CodePush from 'react-native-code-push'
 
 let getdata = 0;
 let itemslength;
@@ -120,7 +121,7 @@ class Recent extends React.Component {
     );
   };
   async componentDidMount() {
- 
+    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
     const signindetails = await AsyncStorage.getItem("signindata");
     let parsedata = JSON.parse(signindetails);
     gettoken = parsedata.accessToken;
@@ -144,9 +145,9 @@ class Recent extends React.Component {
   //     prop1: new Date().getSeconds()
   //   });
   // }
-  crashEvent(){
-    Crashes.generateTestCrash();
-  }
+  // crashEvent(){
+  //   Crashes.generateTestCrash();
+  // }
   checkEmployee(){
     this.props.projectiddata !== "" && this.props.projectiddata != undefined ?
       Arrayid = this.props.projectiddata.project.map(function (itemsid, id) {
@@ -343,7 +344,9 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
+                        <View><Text>Hello Visakh</Text></View>
                       </View>
+                      
                     ) : null}
                   </View>
                 </View>
