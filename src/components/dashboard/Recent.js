@@ -345,7 +345,7 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
-                        {/* <View><Text>Hello Visakh</Text></View> */}
+                        <View><Text>Hello Visakh</Text></View>
                       </View>
                       
                     ) : null}
