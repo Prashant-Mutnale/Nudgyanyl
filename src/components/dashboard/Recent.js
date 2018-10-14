@@ -113,7 +113,12 @@ class Recent extends React.Component {
       console.log("otherscreen");
     }
   };
-
+  codepushSync(){
+    codePush.sync({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE
+    })
+  }
   emptycontentlist = () => {
     return (
       <View style={{ marginTop: "50%" }}>
@@ -124,7 +129,7 @@ class Recent extends React.Component {
     );
   };
   async componentDidMount() {
- 
+    this.codepushSync()
     const signindetails = await AsyncStorage.getItem("signindata");
     let parsedata = JSON.parse(signindetails);
     gettoken = parsedata.accessToken;
