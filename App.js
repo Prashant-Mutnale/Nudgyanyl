@@ -58,14 +58,9 @@ export default class App extends Component {
         // this.doWhateverAPICallsINeed = this.doWhateverAPICallsINeed.bind(this)
         this.handleAppStatehange = this.handleAppStatehange.bind(this)
     }
-    codepushSync(){
-        codePush.sync({
-          updateDialog: true,
-          installMode: CodePush.InstallMode.IMMEDIATE
-        })
-      }
+    
     async componentDidMount() {
-        this.codepushSync()
+    
         const systemName = DeviceInfo.getSystemName();
         console.log("systemName",systemName)
         AppState.addEventListener('change', this.handleAppStatehange);

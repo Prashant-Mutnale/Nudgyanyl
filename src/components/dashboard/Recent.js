@@ -114,6 +114,7 @@ class Recent extends React.Component {
     }
   };
   codepushSync(){
+    Alert("celld")
     CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
@@ -245,6 +246,7 @@ class Recent extends React.Component {
           </TouchableOpacity>
         </View> */}
         <View style={{position: 'relative', flex: 1,marginTop: 10}}>
+        <Text>Hello</Text>
         {/* <Button tittle="Send event" onPress={()=>this.sendEvent()}></Button>
         <Button tittle="Crash event" onPress={()=>this.crashEvent()}></Button> */}
         <FlatList
