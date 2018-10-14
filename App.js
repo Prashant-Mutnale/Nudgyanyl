@@ -36,6 +36,7 @@ import { hof } from './src/redux/actions/Hallof'
 import { myreviews } from './src/redux/actions/MyReviews'
 import Networksign from './src/components/networkfail'
 import DeviceInfo from 'react-native-device-info';
+import CodePush from 'react-native-code-push';
 
 
 import { Actions, Scene, Router, Animations, Reducer, ActionConst } from 'react-native-router-flux';
