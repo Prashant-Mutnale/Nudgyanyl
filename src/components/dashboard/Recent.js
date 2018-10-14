@@ -132,7 +132,7 @@ class Recent extends React.Component {
     gettoken = parsedata.accessToken;
     this.props.recent(gettoken);
     this.props.getProjectid(gettoken)
-    this.codepush()
+    // this.codepush()
   }
   renderItem(data) {
     return (
@@ -350,7 +350,7 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
-                        {/* <View><Text>Hello Visakh</Text></View> */}
+                        <Button title="clickme" onPress={()=>this.codepush()}></Button>
                       </View>
                       
                     ) : null}
