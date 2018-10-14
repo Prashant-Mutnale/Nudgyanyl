@@ -114,7 +114,7 @@ class Recent extends React.Component {
     }
   };
   codepushSync(){
-    codePush.sync({
+    CodePush.sync({
       updateDialog: true,
       installMode: CodePush.InstallMode.IMMEDIATE
     })
