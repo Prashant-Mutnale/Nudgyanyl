@@ -92,9 +92,7 @@ class Recent extends React.Component {
     AppState.addEventListener('change', this.handleAppStatehange);
    
   }
-  codepush(){
-    CodePush.sync({updateDialog: true , installMode: InstallMode.IMMEDIATE});
-  }
+
 
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handleAppStatehange);
@@ -132,7 +130,6 @@ class Recent extends React.Component {
     gettoken = parsedata.accessToken;
     this.props.recent(gettoken);
     this.props.getProjectid(gettoken)
-    this.codepush()
   }
   renderItem(data) {
     return (
