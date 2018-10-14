@@ -347,7 +347,7 @@ class Recent extends React.Component {
                           size={22}
                           color="#f88586"
                         />
-                        <Button title="clickme" onPress={()=>this.codepush()}></Button>
+                        {/* <Button title="clickme" onPress={()=>this.codepush()}></Button> */}
                       </View>
                       
                     ) : null}
